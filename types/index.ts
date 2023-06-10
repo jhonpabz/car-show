@@ -5,4 +5,5 @@ export interface CustomButtonProps {
   containerStyles?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
+  btnType?: 'button' | 'submit';
 }
