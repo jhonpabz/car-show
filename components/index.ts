@@ -6,3 +6,4 @@ export * from './SearchBar';
 export * from './CustomFilter';
 export * from './SearchManufacturer';
 export * from './CarCard';
+export * from './CarDetails';
