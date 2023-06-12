@@ -29,6 +29,7 @@ export default async function Home() {
             <section>
               <div className="home__cars-wrapper">
                 {allCars?.map((car) => (
+                  // eslint-disable-next-line react/jsx-key
                   <CarCard car={car} />
                 ))}
               </div>
