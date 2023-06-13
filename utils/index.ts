@@ -1,3 +1,5 @@
+import { CarProps } from '@/types';
+
 export async function fetchCars() {
   const { RAPID_API_KEY, RAPID_API_HOST, API_BASE_URL } = process.env;
   const headers = {
@@ -5,7 +7,7 @@ export async function fetchCars() {
     'X-RapidAPI-Host': RAPID_API_HOST,
   };
 
-  const response = await fetch(`${API_BASE_URL}/cars?model=corolla`, {
+  const response = await fetch(`${API_BASE_URL}/cars?model=carrera`, {
     headers: headers,
   });
 
@@ -40,4 +42,20 @@ export const updateSearchParams = (type: string, value: string) => {
   const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;
+};
+
+export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+  const url = new URL('https://cdn.imagin.studio/getimage');
+
+  const { make, year, model } = car;
+
+  // https://www.imagin.studio/car-image-api
+  url.searchParams.append('customer', 'hrjavascript-mastery');
+  url.searchParams.append('make', make);
+  url.searchParams.append('modelFamily', model.split(' ')[0]);
+  url.searchParams.append('zoomType', 'fullscreen');
+  url.searchParams.append('modelYear', `${year}`);
+  url.searchParams.append('angle', `${angle}`);
+
+  return `${url}`;
 };
