@@ -7,7 +7,7 @@ export async function fetchCars() {
     'X-RapidAPI-Host': RAPID_API_HOST,
   };
 
-  const response = await fetch(`${API_BASE_URL}/cars?model=carrera`, {
+  const response = await fetch(`${API_BASE_URL}/cars?model=q3`, {
     headers: headers,
   });
 
