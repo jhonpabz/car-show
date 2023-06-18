@@ -9,7 +9,7 @@ export async function fetchCars(filters: FilterProps) {
   };
 
   const response = await fetch(
-    `${API_BASE_URL}/cars?make=${manufacturer}&model=${model}`,
+    `${API_BASE_URL}/cars?make=${manufacturer}&model=${model}&fuel_type=${fuel}&year=${year}`,
     {
       headers: headers,
     }
