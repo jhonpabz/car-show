@@ -7,3 +7,4 @@ export * from './CustomFilter';
 export * from './SearchManufacturer';
 export * from './CarCard';
 export * from './CarDetails';
+export * from './ShowMore';
